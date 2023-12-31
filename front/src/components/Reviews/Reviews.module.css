@@ -1,0 +1,22 @@
+.reviews {
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 45px;
+    background-color: #1A2136;
+}
+
+.reviewsTitle {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 75px;
+}
+
+.reviewsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 75px;
+}

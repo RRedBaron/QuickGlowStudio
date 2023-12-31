@@ -1,0 +1,86 @@
+.bookForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.selectWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.selectDateWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.selectLabel {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.selectDateField {
+    font-size: 18px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.selectField {
+    font-size: 18px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputField {
+    font-size: 18px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inputDetailsField {
+    font-size: 18px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 100px;
+    resize: none;
+
+}
+
+.inputError {
+    position: absolute;
+    font-size: 14px;
+    color: red;
+    bottom: 0;
+}
+
+.submitButton {
+    font-size: 24px;
+    padding: 0.5rem;
+    border: 3px solid #1A2136;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #1A2136;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.submitButton:hover {
+    background-color: #1A2136;
+    color: #fff;
+}

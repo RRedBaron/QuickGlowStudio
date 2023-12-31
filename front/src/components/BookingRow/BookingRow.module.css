@@ -1,0 +1,55 @@
+.bookingRow {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #F0F0F0;
+}
+
+.bookingRowCell {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+}
+
+.approveButton {
+    width: 45px;
+    height: 45px;
+    background: #FFF;
+    border: 1px solid #65B741;
+    border-radius: 50%;
+    color: #65B741;
+    font-size: 18px;
+    padding: 5px;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.approveButton:hover {
+    cursor: pointer;
+    background: #65B741;
+    color: #FFF;
+}
+
+.declineButton {
+    width: 45px;
+    height: 45px;
+    background: #FFF;
+    border: 1px solid #FF0000;
+    border-radius: 50%;
+    color: #FF0000;
+    font-size: 18px;
+    padding: 5px;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.declineButton:hover {
+    cursor: pointer;
+    background: #FF0000;
+    color: #FFF;
+}

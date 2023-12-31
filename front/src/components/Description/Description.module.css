@@ -1,0 +1,30 @@
+.description {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+    height: 350px;
+}
+
+.descriptionSlogan {
+    max-width: 250px;
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.descriptionSlogan strong {
+    font-weight: 700;
+}
+
+.descriptionText {
+    max-width: 550px;
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}

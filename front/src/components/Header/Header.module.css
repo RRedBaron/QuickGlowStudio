@@ -1,0 +1,104 @@
+.headerContent {
+    background-color: rgba(217, 217, 217, 0.15);
+    width: 100%;
+    height: 160px;
+    padding: 0 160px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.headerLogo {
+    width: 265px;
+}
+
+.headerLogo img {
+    width: 100%;
+    height: 100%;
+}
+
+.headerList {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+.headerListItem {
+    display: flex;
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    align-items: center;
+}
+
+.headerListItem:hover .headerListItemContent {
+    display: flex; /* Показываем элемент при ховере */
+}
+
+.headerListItemContent {
+    width: 270px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: #FFF;
+    color: #1A2136;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.headerListLink {
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+    border: 3px solid #F45050;
+    color: #F45050;
+    transition: all 0.3s ease-in-out;
+}
+
+.headerListLink:hover {
+    background-color: #F45050;
+    color: #fff;
+}
+
+.headerListItemContentItem {
+    display: flex;
+}
+
+.headerListItemContentItem img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.headerImgWrapper {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-right: 20px;
+}
+
+.headerNickname {
+    margin-right: 20px;
+}
+
+.headerUserWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+}

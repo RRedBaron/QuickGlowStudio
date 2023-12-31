@@ -1,0 +1,38 @@
+.loginWrapper {
+    background-image: url("/images/login_background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.loginContent {
+    background: #FFF;
+    width: 700px;
+    border-radius: 24px;
+    padding: 55px 135px;
+}
+
+.loginTitle {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 1px;
+    color: #1A2136;
+    margin-bottom: 20px;
+}
+
+.loginSubtitle {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 1px;
+    color: #1A2136;
+    margin-bottom: 30px;
+}
+

@@ -1,0 +1,112 @@
+.footer {
+    position: sticky;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 335px;
+    background-color: #1A2136;
+    font-family: 'Inter', sans-serif;
+    color: #FFF;
+    padding: 35px 160px 15px;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 225px;
+    gap: 50px;
+}
+
+.footerContacts {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.footerContactsTitle {
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.footerContactsText {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.footerSocial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footerSocialTitle {
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.footerInput {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    color: #B6BBC4;
+    background: #FFFBF5;
+    padding: 13px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.footerInput:focus {
+    outline: none;
+}
+
+.footerButton {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    color: #FFF;
+    background: #F45050;
+    padding: 13px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.footerButton:hover {
+    transform: scale(1.02);
+    outline: none;
+
+}
+
+.footerSocialList {
+    display: flex;
+    gap: 20px;
+}
+
+.footerSocialListItem svg {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.footerSocialListItem svg:hover {
+    transform: scale(1.2);
+}
+
+.footerCopyright {
+    font-size: 16px;
+    margin-top: 40px;
+}

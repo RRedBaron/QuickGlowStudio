@@ -1,0 +1,21 @@
+.portfolio {
+    font-family: 'Inter', sans-serif;
+    padding-top: 95px;
+    padding-bottom: 95px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.portfolioTitle {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.portfolioText {
+    font-size: 22px;
+    font-weight: 400;
+}

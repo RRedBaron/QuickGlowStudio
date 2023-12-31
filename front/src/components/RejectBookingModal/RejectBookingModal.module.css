@@ -1,0 +1,66 @@
+.modalWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, 0.4);
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.modalTitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.rejectButton {
+    background-color: #FFFFFF;
+    border: 3px solid #F45050;
+    font-size: 24px;
+    color: #F45050;
+    border-radius: 5px;
+    padding: 10px 40px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out all;
+
+}
+
+.rejectButton:hover {
+    background-color: #F45050;
+    color: #FFFFFF;
+}
+
+.cancelButton {
+    background-color: #FFFFFF;
+    border: 3px solid #1A2136;
+    font-size: 24px;
+    color: #1A2136;
+    border-radius: 5px;
+    padding: 10px 40px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out all;
+}
+
+.cancelButton:hover {
+    background-color: #1A2136;
+    color: #FFFFFF;
+}

@@ -1,0 +1,92 @@
+.signUpForm {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.inputLabel {
+    font-size: 14px;
+    color: #666;;
+    margin-bottom: 16px;
+}
+
+.inputField {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.inputError {
+    font-size: 12px;
+    color: #F45050;
+    position: absolute;
+    bottom: 0.5rem;
+}
+
+.checkboxWrapper {
+    align-items: center;
+    position: relative;
+    display: flex;
+}
+
+.checkboxLabel {
+    font-size: 14px;
+    color: #666;
+    margin-left: 10px;
+}
+
+.inputCheckbox {
+    margin: 0;
+}
+
+.submit {
+    width: 100%;
+    color: #F45050;
+    margin-top: 25px;
+    padding: 15px 160px;
+    border: 1px solid #F45050;
+    border-radius: 32px;
+    font-size: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit:hover {
+    background-color: #F45050;
+    color: #fff;
+}
+
+.error {
+    color: #F45050;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/*.separator {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    margin: 20px 0;*/
+/*}*/
+
+/*.separatorLine {*/
+/*    margin: 0 10px;*/
+/*    border: none;*/
+/*    border-top: 2px solid rgba(102, 102, 102, 0.25);*/
+/*    width: 100%*/
+/*}*/
+
+/*.separatorText {*/
+/*    font-size: 20px;*/
+/*    color: rgba(102, 102, 102, 1);*/
+/*    margin: 0 5px;*/
+/*}*/
