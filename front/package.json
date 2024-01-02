@@ -16,7 +16,6 @@
     "formik": "^2.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-google-maps": "^9.4.5",
     "react-redux": "^9.0.4",
     "react-router-dom": "^6.21.1",
     "swiper": "^11.0.5",
