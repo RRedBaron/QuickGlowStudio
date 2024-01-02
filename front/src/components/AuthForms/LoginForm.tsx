@@ -36,9 +36,8 @@ function LoginForm() {
 
             if (userDocSnap.exists()) {
                 const userData = userDocSnap.data();
-                dispatch(setUser(userData));
-                console.log(userData);
-                navigate('/userPage')
+                dispatch(setUser(userData))
+                userData.isAdmin ? navigate('/admin') : navigate('/userPage')
             } else {
                 setError("No such user");
             }

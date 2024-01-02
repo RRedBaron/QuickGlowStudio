@@ -7,7 +7,7 @@ import {removeUser} from "../../redux/slices/userSlice.ts";
 import {useAppDispatch} from "../../hooks/useAppDispatch.ts";
 
 function Header() {
-    const {isAuth, fullname} = useAuth();
+    const {isAuth, isAdmin, fullname} = useAuth();
     const dispatch = useAppDispatch();
     const location = useLocation();
     const handleSignOut = () => {
@@ -22,13 +22,12 @@ function Header() {
         <header className={styles.header}>
             <div className={styles.headerContent}
                  style={location.pathname !== "/" ? {"backgroundColor": "rgb(255, 255, 255)"} : {}}>
-                <Link  className={styles.headerLogo} to={"/"}>
+                <Link className={styles.headerLogo} to={"/"}>
                     <img src="/images/logo.png"></img>
                 </Link>
                 <ul className={styles.headerList}>
                     <li className={styles.headerListItem} style={color}>EN |</li>
                     {!isAuth ? (<>
-                        <li className={styles.headerListItem} style={color}>Photo services</li>
                         <li className={styles.headerListItem} style={color}>
                             <span>Locations</span>
                             <div className={styles.headerListItemContent}>
@@ -54,7 +53,7 @@ function Header() {
                             <Link className={styles.headerListLink} to="/login">Log In</Link>
                         </li>
                     </>) : (<li className={styles.headerListItem} style={color}>
-                        <Link style={color} to={"/userpage"} className={styles.headerUserWrapper}>
+                        <Link style={color} to={isAdmin ? "/admin" : "/userpage"} className={styles.headerUserWrapper}>
                             <span className={styles.headerNickname}>{fullname}</span>
                             <div className={styles.headerImgWrapper}>
                                 <img src={"/images/avatar.jpg"}/>

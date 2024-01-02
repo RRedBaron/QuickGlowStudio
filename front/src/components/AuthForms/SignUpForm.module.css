@@ -24,6 +24,10 @@
     margin-bottom: 30px;
 }
 
+.inputField::placeholder {
+    color: #b4b4b4;
+}
+
 .inputError {
     font-size: 12px;
     color: #F45050;
@@ -32,6 +36,7 @@
 }
 
 .checkboxWrapper {
+    margin-top: 10px;
     align-items: center;
     position: relative;
     display: flex;
@@ -68,7 +73,6 @@
 .error {
     color: #F45050;
     font-size: 14px;
-    margin-top: 10px;
 }
 
 /*.separator {*/

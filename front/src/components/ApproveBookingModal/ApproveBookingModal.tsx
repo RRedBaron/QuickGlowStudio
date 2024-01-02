@@ -13,6 +13,7 @@ interface BookingRowProps {
 function ApproveBookingModal({booking}: BookingRowProps) {
     const dispatch = useAppDispatch();
     const [price, setPrice] = useState(booking.price);
+    const [comment, setComment] = useState("");
 
     const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
         if (e.target === e.currentTarget) {
@@ -25,18 +26,23 @@ function ApproveBookingModal({booking}: BookingRowProps) {
         try {
             await updateDoc(bookingRef, {
                 price: price,
-                status: "approved"
+                status: "approved",
+                comment: comment
             });
             dispatch(toggleApproveModal());
             window.location.reload();
         } catch (e) {
-            console.log(e);
+            console.error(e);
         }
     }
 
     const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPrice(+e.target.value);
     };
+
+    const handleCommentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setComment(e.target.value);
+    }
 
     return (
         <div className={styles.modalWrapper} onMouseDown={handleModalClick}>
@@ -61,7 +67,7 @@ function ApproveBookingModal({booking}: BookingRowProps) {
                     <span className={styles.priceCurrency}>$</span>
                 </div>
                 <div className={styles.commentsWrapper}>
-                    <textarea className={styles.commentsInput} placeholder={"Comments"}/>
+                    <textarea className={styles.commentsInput} placeholder={"Comments"} onChange={handleCommentChange}/>
                 </div>
                 <div className={styles.modalButtonsWrapper}>
                     <button className={styles.approveButton} onClick={handleApproveClick}>Approve</button>

@@ -4,30 +4,24 @@ import {toggleBookModal} from "../redux/slices/bookModalSlice.ts";
 import styles from "./pagesStyles/UserPage.module.css";
 import CreateBookingModal from "../components/CreateBookingModal/CreateBookingModal.tsx";
 import {useAppSelector} from "../hooks/useAppSelector.ts";
-import {useNavigate} from "react-router-dom";
 import {useAuth} from "../hooks/useAuth.ts";
 import {useEffect, useState} from "react";
 import {DocumentData, collection, getDocs, query, where} from "firebase/firestore";
 import {firestoreDb} from "../firebase-config.ts";
 import {Booking} from "../types/booking";
-
-interface BookingsState {
-    bookings: Array<Booking>
-}
-
-const initialBookingsState: BookingsState = {
-    bookings: []
-};
+import FilterRow from "../components/FilterRow/FilterRow.tsx";
+import {setBookings} from "../redux/slices/bookingsSlice.ts";
+import {filterBookings} from "../utils/filters.ts";
 
 const BOOKINGS_PER_PAGE = 4;
 
 function UserPage() {
     const dispatch = useAppDispatch();
     const isModalOpen = useAppSelector(state => state.bookModal.isOpen);
-    const navigate = useNavigate();
-    const {isAuth, uid, isAdmin} = useAuth();
-    const [bookings, setBookings] = useState<BookingsState>(initialBookingsState);
+    const {isAuth, uid} = useAuth();
+    const bookings = useAppSelector(state => state.bookings.bookings);
     const [currentPage, setCurrentPage] = useState<number>(1);
+    const [filteredBookings, setFilteredBookings] = useState<Booking[]>([]);
 
     useEffect(() => {
         const bookingRef = query(collection(firestoreDb, "bookings"), where("uid", "==", uid));
@@ -38,19 +32,21 @@ function UserPage() {
                 ...doc.data(),
                 id: doc.id
             }));
-            setBookings({bookings: bookingsList});
+            dispatch(setBookings(bookingsList));
         }
 
         getBookings();
     }, [isAuth, uid]);
 
-    if (!isAuth) {
-        navigate("/login");
+    useEffect(() => {
+        setFilteredBookings(bookings);
+    }, [bookings]);
+
+    const handleFilter = (filters: any) => {
+        const filteredBookings = filterBookings(bookings, filters);
+        setFilteredBookings(filteredBookings);
     }
 
-    if (isAdmin) {
-        navigate("/admin");
-    }
 
     const toggleModal = () => {
         dispatch(toggleBookModal());
@@ -58,7 +54,7 @@ function UserPage() {
 
     const indexOfLastBooking = currentPage * BOOKINGS_PER_PAGE;
     const indexOfFirstBooking = indexOfLastBooking - BOOKINGS_PER_PAGE;
-    const currentBookings = bookings.bookings.slice(indexOfFirstBooking, indexOfLastBooking);
+    const currentBookings = filteredBookings.slice(indexOfFirstBooking, indexOfLastBooking);
 
     const paginate = (pageNumber: number) => {
         setCurrentPage(pageNumber);
@@ -71,28 +67,31 @@ function UserPage() {
                     <h2 className={styles.userPageHeaderTitle}>Your Sessions</h2>
                     <button className={styles.createBookingButton} onClick={toggleModal}>Book a session</button>
                 </div>
+                <FilterRow onFilter={handleFilter}/>
                 <div className={styles.bookingsWrapper}>
                     {
-                        bookings.bookings.length > 0 &&
+                        filteredBookings.length > 0 &&
                         <div className={styles.bookingsHeader}>
                             <div className={styles.bookingsHeaderCell}>
-                                <p>Date</p>
+                                <p>Created at</p>
                             </div>
                             <div className={styles.bookingsHeaderCell}>
-                                <p>Details</p>
+                                <p>Reserved Date</p>
                             </div>
                             <div className={styles.bookingsHeaderCell}>
-                                <p>Price</p>
+                                <p>Type of session</p>
                             </div>
                             <div className={styles.bookingsHeaderCell}>
-                                <p>Status</p>
+                                <p>Estimated Price</p>
+                            </div>
+                            <div className={styles.bookingsHeaderCell}>
                             </div>
                         </div>
                     }
                     {currentBookings.map((booking: Booking, index) => (
                         <BookingRow booking={booking} key={index}/>
                     ))}
-                    {bookings.bookings.length === 0 && <h3 className={styles.noBookingsLabel}>No bookings yet :(</h3>}
+                    {filteredBookings.length === 0 && <h3 className={styles.noBookingsLabel}>No bookings yet :(</h3>}
                 </div>
                 <div className={styles.pagesButtonsWrapper}>
                     <button
@@ -102,7 +101,7 @@ function UserPage() {
                     >
                         {"<"}
                     </button>
-                    {Array.from({length: Math.ceil(bookings.bookings.length / BOOKINGS_PER_PAGE)}).map(
+                    {Array.from({length: Math.ceil(bookings.length / BOOKINGS_PER_PAGE)}).map(
                         (_, index) => (
                             <button
                                 key={index}
@@ -116,7 +115,7 @@ function UserPage() {
                     <button
                         className={styles.pagesButton}
                         onClick={() => paginate(currentPage + 1)}
-                        disabled={currentPage === Math.ceil(bookings.bookings.length / BOOKINGS_PER_PAGE)}
+                        disabled={currentPage === Math.ceil(bookings.length / BOOKINGS_PER_PAGE)}
                     >
                         {">"}
                     </button>

@@ -21,7 +21,6 @@ function App() {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user) => {
             if (user) {
-                console.log("User is logged in")
                 const userRef = doc(firestoreDb, "users", user.uid);
                 onSnapshot(userRef, (doc) => {
                     if (doc.exists()) {
@@ -35,7 +34,7 @@ function App() {
                             isAdmin: userData.isAdmin
                         }));
                     } else {
-                        console.log("User not found");
+                        dispatch(removeUser());
                     }
                 });
             } else {

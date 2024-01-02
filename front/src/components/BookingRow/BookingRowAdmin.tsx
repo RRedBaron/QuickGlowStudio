@@ -16,9 +16,22 @@ function BookingRowAdmin({booking, selectedBooking, onApproveClick, onRejectClic
     const isRejectModalOpen = useAppSelector(state => state.adminModal.isRejectOpen);
 
     const backgroundColor = booking.status === "approved" ? "#D2E3C8" : booking.status === "rejected" ? "#EF9595" : "F0F0F0";
+    const createdAtDate = new Date(booking.createdAt);
+
+    const formattedCreatedAt =
+        `${createdAtDate.getFullYear()}-${padZero(createdAtDate.getMonth() + 1)}-${padZero(createdAtDate.getDate())} ` +
+        `${padZero(createdAtDate.getHours())}:${padZero(createdAtDate.getMinutes())}`;
+
+    function padZero(num: number) {
+        return num.toString().padStart(2, '0');
+    }
 
     return (
         <div className={styles.bookingRow} style={{"backgroundColor": backgroundColor}}>
+            <div className={styles.bookingRowCell}>
+                <p>{formattedCreatedAt}</p>
+            </div>
+
             <div className={styles.bookingRowCell}>
                 <p>{booking.selectedDate} {booking.selectedTime}</p>
             </div>
@@ -26,7 +39,7 @@ function BookingRowAdmin({booking, selectedBooking, onApproveClick, onRejectClic
                 <p>{booking.selectedType}</p>
             </div>
             <div className={styles.bookingRowCell}>
-                <p>{booking.price}</p>
+                <p>{booking.price} $</p>
             </div>
             <div className={styles.bookingRowCell}>
                 {booking.status !== "approved" ?

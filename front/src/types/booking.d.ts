@@ -9,4 +9,6 @@ export type Booking = {
     price: number;
     details: string;
     status: string;
+    createdAt: string;
+    comment: string;
 }

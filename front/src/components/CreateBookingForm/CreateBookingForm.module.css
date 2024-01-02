@@ -30,6 +30,7 @@
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .selectField {
@@ -37,6 +38,7 @@
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .inputWrapper {
@@ -50,6 +52,7 @@
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .inputDetailsField {

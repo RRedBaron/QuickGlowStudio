@@ -72,17 +72,17 @@ function SignUpForm() {
             <Form className={styles.signUpForm}>
                 <div className={styles.inputWrapper}>
                     <label className={styles.inputLabel} htmlFor="fullname">Full Name</label>
-                    <Field className={styles.inputField} id="fullname" name="fullname" type="text"/>
+                    <Field className={styles.inputField} id="fullname" name="fullname" type="text" placeholder="Zubenko Mikhail"/>
                     <ErrorMessage className={styles.inputError} name="fullname" component="div"/>
                 </div>
                 <div className={styles.inputWrapper}>
                     <label className={styles.inputLabel} htmlFor="phone">Phone Number</label>
-                    <Field className={styles.inputField} id="phone" name="phone" type="text"/>
+                    <Field className={styles.inputField} id="phone" name="phone" type="text" placeholder="+380857570615"/>
                     <ErrorMessage className={styles.inputError} name="phone" component="div"/>
                 </div>
                 <div className={styles.inputWrapper}>
                     <label className={styles.inputLabel} htmlFor="email">Email</label>
-                    <Field className={styles.inputField} id="email" name="email" type="text"/>
+                    <Field className={styles.inputField} id="email" name="email" type="text" placeholder="example@gmail.com"/>
                     <ErrorMessage className={styles.inputError} name="email" component="div"/>
                 </div>
                 <div className={styles.inputWrapper}>

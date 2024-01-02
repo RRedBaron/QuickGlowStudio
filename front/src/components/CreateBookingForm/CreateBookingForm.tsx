@@ -45,7 +45,9 @@ function CreateBookingForm() {
                 amount: values.amount,
                 details: values.details,
                 price: calculatePrice(values.selectedType, values.duration, values.amount),
-                status: "pending"
+                status: "pending",
+                createdAt: new Date().toISOString(),
+                comment: ""
             }
 
             const bookingsCollectionRef = collection(firestoreDb, "bookings");
