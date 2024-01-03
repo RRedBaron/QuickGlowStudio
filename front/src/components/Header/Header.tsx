@@ -10,6 +10,7 @@ function Header() {
     const {isAuth, isAdmin, fullname} = useAuth();
     const dispatch = useAppDispatch();
     const location = useLocation();
+
     const handleSignOut = () => {
         signOut(auth).then(() => {
             dispatch(removeUser());
@@ -25,10 +26,11 @@ function Header() {
                 <Link className={styles.headerLogo} to={"/"}>
                     <img src="/images/logo.png"></img>
                 </Link>
+
                 <ul className={styles.headerList}>
-                    <li className={styles.headerListItem} style={color}>EN |</li>
+                    <li className={styles.headerListItemDesktop} style={color}>EN |</li>
                     {!isAuth ? (<>
-                        <li className={styles.headerListItem} style={color}>
+                        <li className={styles.headerListItemDesktop} style={color}>
                             <span>Locations</span>
                             <div className={styles.headerListItemContent}>
                                 <div className={styles.headerListItemContentItem}>
@@ -36,7 +38,7 @@ function Header() {
                                 </div>
                             </div>
                         </li>
-                        <li className={styles.headerListItem} style={color}>
+                        <li className={styles.headerListItemDesktop} style={color}>
                             <span>Contacts</span>
                             <div className={styles.headerListItemContent}>
                                 <div className={styles.headerListItemContentItem}>

@@ -110,3 +110,31 @@
     font-size: 16px;
     margin-top: 40px;
 }
+
+@media screen and (max-width: 1200px){
+    .footer {
+        padding: 35px 100px 15px;
+    }
+
+    .footerContactsTitle {
+        font-size: 20px;
+    }
+
+    .footerContactsText {
+        font-size: 12px;
+    }
+
+    .footerSocialTitle {
+        font-size: 20px;
+    }
+
+    .footerCopyright {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .footer {
+        padding: 35px 50px 15px;
+    }
+}

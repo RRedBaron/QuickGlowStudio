@@ -29,3 +29,15 @@
     color: #FFFFFF;
     margin-bottom: 40px;
 }
+
+@media (max-width: 768px) {
+    .introTitle {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .introSlogan {
+        font-size: 24px;
+        line-height: 29px;
+    }
+}

@@ -28,3 +28,12 @@
     font-weight: 300;
     line-height: normal;
 }
+
+@media (max-width: 1200px) {
+    .description {
+        gap: 150px;
+        height: 500px;
+        padding: 0 50px;
+    }
+
+}

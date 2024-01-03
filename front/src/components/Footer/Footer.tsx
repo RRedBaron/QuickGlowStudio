@@ -17,10 +17,6 @@ function Footer() {
                 </div>
                 <div className={styles.footerSocial}>
                     <h4 className={styles.footerSocialTitle}>Newsletter</h4>
-                    <div className={styles.footerInputWrapper}>
-                        <input className={styles.footerInput} type="text" placeholder="Your email address"></input>
-                        <button className={styles.footerButton}>Sign Up</button>
-                    </div>
                     <ul className={styles.footerSocialList}>
                         <li className={styles.footerSocialListItem}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

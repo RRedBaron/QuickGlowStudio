@@ -13,6 +13,26 @@ import bannerImage5 from "/images/portfolio-5.jpg";
 import styles from './PortfolioSlider.module.css';
 
 function PortfolioSlider() {
+
+    const breakpoints = {
+        600: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        900: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        1200: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+    };
+
     return (
         <Swiper
             navigation={{
@@ -24,14 +44,14 @@ function PortfolioSlider() {
                 clickable: true,
             }}
             modules={[Pagination]}
-
-            slidesPerView={2}
             spaceBetween={20}
             centeredSlides={true}
             loop={true}
             style={{
                 width: '80%',
+                margin: '0',
             }}
+            breakpoints={breakpoints}
         >
             <SwiperSlide>
                 <div className={styles['banner-container']}>

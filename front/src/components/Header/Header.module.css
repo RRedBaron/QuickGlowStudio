@@ -28,9 +28,9 @@
     align-items: center;
 }
 
-.headerListItem {
-    display: flex;
+.headerListItem, .headerListItemDesktop {
     position: relative;
+    display: flex;
     font-size: 16px;
     font-weight: 700;
     color: #fff;
@@ -38,8 +38,8 @@
     align-items: center;
 }
 
-.headerListItem:hover .headerListItemContent {
-    display: flex; /* Показываем элемент при ховере */
+.headerListItemDesktop:hover .headerListItemContent {
+    display: flex;
 }
 
 .headerListItemContent {
@@ -101,4 +101,30 @@
     justify-content: center;
     text-decoration: none;
     color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+    .headerContent {
+        font-size: 12px;
+        height: 120px;
+        padding: 0 70px;
+    }
+
+    .headerListItem {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .headerListItemDesktop {
+        display: none;
+    }
+
+    .headerLogo {
+        width: 200px;
+    }
+
+    .headerContent {
+        padding: 0 30px;
+    }
 }

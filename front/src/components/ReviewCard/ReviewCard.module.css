@@ -1,6 +1,18 @@
-.reviewCard {
+.reviewCard, .reviewCardMobile, .reviewCardLaptop {
     height: 450px;
     width: 300px;
     border-radius:20px ;
     background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 1200px) {
+    .reviewCard {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .reviewCardLaptop {
+        display: none;
+    }
 }

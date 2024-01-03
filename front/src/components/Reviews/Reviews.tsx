@@ -6,9 +6,9 @@ function Reviews() {
         <div className={styles.reviews}>
             <h3 className={styles.reviewsTitle}>Customer Reviews</h3>
             <div className={styles.reviewsContainer}>
-                <ReviewCard/>
-                <ReviewCard/>
-                <ReviewCard/>
+                <ReviewCard />
+                <ReviewCard display={"laptop"}/>
+                <ReviewCard display={"desktop"}/>
             </div>
         </div>
     )
