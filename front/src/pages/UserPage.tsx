@@ -42,7 +42,7 @@ function UserPage() {
         setFilteredBookings(bookings);
     }, [bookings]);
 
-    const handleFilter = (filters: any) => {
+    const handleFilter = (filters: object) => {
         const filteredBookings = filterBookings(bookings, filters);
         setFilteredBookings(filteredBookings);
     }
@@ -88,7 +88,7 @@ function UserPage() {
                             </div>
                         </div>
                     }
-                    {currentBookings.map((booking: Booking, index) => (
+                    {currentBookings.map((booking: Booking) => (
                         <BookingRow booking={booking}
                                     key={booking.id}/>
                     ))}

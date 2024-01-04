@@ -64,7 +64,7 @@ function AdminPage() {
         setCurrentPage(pageNumber);
     };
 
-    const handleFilter = (filters: any) => {
+    const handleFilter = (filters: object) => {
         const filteredBookings = filterBookings(bookings, filters);
         setFilteredBookings(filteredBookings);
     }
