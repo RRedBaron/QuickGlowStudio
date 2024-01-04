@@ -13,6 +13,7 @@ import {removeUser, setUser} from "./redux/slices/userSlice.ts";
 import {doc, onSnapshot} from 'firebase/firestore';
 import UserPage from "./pages/UserPage.tsx";
 import AdminPage from "./pages/AdminPage.tsx";
+import UserSettings from "./pages/UserSettings.tsx";
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
                 <Route path={"/signup"} element={<SignUp/>}/>
                 <Route path={"/userPage"} element={<UserPage/>}/>
                 <Route path={"/admin"} element={<AdminPage/>}/>
+                <Route path={"/usersettings"} element={<UserSettings/>}/>
                 <Route path={"*"} element={<NotFound/>}/>
             </Routes>
 

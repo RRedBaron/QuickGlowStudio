@@ -3,7 +3,7 @@ import {signUpSchema} from "../../schemas";
 import styles from "./SignUpForm.module.css";
 import {setUser} from "../../redux/slices/userSlice.ts";
 import {useAppDispatch} from "../../hooks/useAppDispatch.ts";
-import {getAuth, createUserWithEmailAndPassword, UserCredential} from "firebase/auth";
+import {getAuth, createUserWithEmailAndPassword, UserCredential, sendEmailVerification} from "firebase/auth";
 import {setDoc, doc} from "firebase/firestore";
 import {firestoreDb} from "../../firebase-config.ts";
 import {useState} from "react";
@@ -34,6 +34,9 @@ function SignUpForm() {
         try {
             const userCredential: UserCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
             const user = userCredential.user;
+
+            await sendEmailVerification(user);
+
             const userData = {
                 uid: user.uid,
                 fullname: values.fullname,

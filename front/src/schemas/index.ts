@@ -42,3 +42,11 @@ export const createBookingSchema = yup.object().shape({
         .max(12, '12 people maximum'),
     details: yup.string(),
 });
+
+export const updateInfoSchema = yup.object().shape({
+    fullname: yup.string(),
+    phone: yup.string().matches(/^[+0-9]{10,}$/, 'Phone number is invalid'),
+    email: yup.string().email('Email is invalid'),
+    newPassword: yup.string().min(8, 'Password must be at least 8 characters')
+    .matches(/^(?=.*[A-Z])(?=.*\d).{8,}$/, "Password must contain at least one uppercase letter and one number")
+});
