@@ -13,7 +13,7 @@ import {useAppSelector} from "../hooks/useAppSelector.ts";
 import {setBookings} from "../redux/slices/bookingsSlice.ts";
 
 
-const BOOKINGS_PER_PAGE = 4;
+const BOOKINGS_PER_PAGE = 3;
 
 function AdminPage() {
     const dispatch = useAppDispatch();
@@ -96,8 +96,9 @@ function AdminPage() {
                             </div>
                         </div>
                     }
-                    {currentBookings.map((booking: Booking, index) => (
-                        <BookingRowAdmin booking={booking} key={index}
+                    {currentBookings.map((booking: Booking) => (
+                        <BookingRowAdmin booking={booking}
+                                         key={booking.id}
                                          selectedBooking={selectedBooking}
                                          onApproveClick={() => handleApproveClick(booking)}
                                          onRejectClick={() => handleRejectClick(booking)}/>

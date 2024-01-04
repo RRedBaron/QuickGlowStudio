@@ -13,7 +13,7 @@ import FilterRow from "../components/FilterRow/FilterRow.tsx";
 import {setBookings} from "../redux/slices/bookingsSlice.ts";
 import {filterBookings} from "../utils/filters.ts";
 
-const BOOKINGS_PER_PAGE = 4;
+const BOOKINGS_PER_PAGE = 3;
 
 function UserPage() {
     const dispatch = useAppDispatch();
@@ -89,7 +89,8 @@ function UserPage() {
                         </div>
                     }
                     {currentBookings.map((booking: Booking, index) => (
-                        <BookingRow booking={booking} key={index}/>
+                        <BookingRow booking={booking}
+                                    key={booking.id}/>
                     ))}
                     {filteredBookings.length === 0 && <h3 className={styles.noBookingsLabel}>No bookings yet :(</h3>}
                 </div>

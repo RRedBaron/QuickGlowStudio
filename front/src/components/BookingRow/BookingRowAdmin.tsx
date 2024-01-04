@@ -48,7 +48,7 @@ function BookingRowAdmin({booking, selectedBooking, onApproveClick, onRejectClic
                     <button className={styles.declineButton} onClick={onRejectClick}>-</button> : null}
             </div>
             {isApproveModalOpen && <ApproveBookingModal booking={selectedBooking || booking}/>}
-            {isRejectModalOpen && <RejectBookingModal booking={booking}/>}
+            {isRejectModalOpen && <RejectBookingModal booking={selectedBooking || booking}/>}
         </div>
     );
 }

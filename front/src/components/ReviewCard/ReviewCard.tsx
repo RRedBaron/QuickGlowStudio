@@ -8,6 +8,7 @@ function ReviewCard({display = "mobile"}: ReviewCardProps) {
     return (
         <div
             className={display === "desktop" ? styles.reviewCard : display === "laptop" ? styles.reviewCardLaptop : styles.reviewCardMobile}>
+
         </div>
     )
 }

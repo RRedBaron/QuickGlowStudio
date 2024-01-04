@@ -5,7 +5,9 @@
 }
 
 .userSettings {
+    height: 100vh;
     padding-top: 160px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;

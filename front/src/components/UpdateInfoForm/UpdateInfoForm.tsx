@@ -56,6 +56,7 @@ function UpdateInfoForm() {
                     await reauthenticateWithCredential(user, credential);
                     // navigate('/login');
                     await verifyBeforeUpdateEmail(user, values.email);
+                    await updateDoc(doc(firestoreDb, "users", uid), {email: values.email});
                     await auth.signOut();
                 }
 

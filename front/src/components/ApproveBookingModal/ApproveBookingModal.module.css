@@ -141,3 +141,19 @@
     background-color: #1A2136;
     color: #FFFFFF;
 }
+
+.numbersRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.numberOfPeople {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.duration {
+    font-size: 20px;
+    font-weight: 600;
+}

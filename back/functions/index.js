@@ -65,11 +65,18 @@ exports.sendEmailOnStatusChange = functions.firestore
             const userSnapshot = await admin.firestore().collection('users').doc(userId).get();
             const userData = userSnapshot.data();
 
+            const mailText = afterData.comments ? `
+                Статус вашої заявки змінився на ${afterData.status}.
+                Коментарі: ${afterData.comments}
+            ` : `
+                Статус вашої заявки змінився на ${afterData.status}.
+            `
+
             const mailOptions = {
                 from: gmailEmail,
                 to: userData.email,
                 subject: 'Зміна статусу заявки',
-                text: `Статус вашей заявки изменился на: ${afterData.status}`
+                text: mailText
             };
 
             mailTransport.sendMail(mailOptions, (error, info) => {

@@ -55,6 +55,10 @@ function ApproveBookingModal({booking}: BookingRowProps) {
                 <div className={styles.typeRow}>
                     <p className={styles.typeTitle}>Type: {booking.selectedType}</p>
                 </div>
+                <div className={styles.numbersRow}>
+                    <p className={styles.numberOfPeople}>Number of people: {booking.amount}</p>
+                    <p className={styles.duration}>Duration: {booking.duration}</p>
+                </div>
                 <div className={styles.detailsRow}>
                     <p className={styles.detailsTitle}>Details:</p>
                     <p className={styles.detailsText}>{booking.details}</p>

@@ -112,9 +112,6 @@ function SignUpForm() {
 
                 <button className={styles.submit} type="submit">Create an account</button>
                 {error && <div className={styles.error}>{error}</div>}
-
-
-
             </Form>
         </Formik>
     )
